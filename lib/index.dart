@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:qingqing_flutter/util/network.dart';
 
 class Index extends StatelessWidget {
+  void hget() {
+    Network.api(
+      '/common/option',
+      params: {'name': 'show_pictures'},
+      // loading: '加载中',
+      loading: true,
+      success: (data, response) {
+        print(data['buyTickets']);
+      }
+    );
+  }
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -43,9 +56,7 @@ class Index extends StatelessWidget {
                 backgroundColor: MaterialStateProperty.all(Colors.transparent),
                 elevation: MaterialStateProperty.all(0),
               ),
-              onPressed: (){
-                print(1);
-              },
+              onPressed: hget,
               child: Container(
                 alignment: Alignment.center,
                 // height: 50,
