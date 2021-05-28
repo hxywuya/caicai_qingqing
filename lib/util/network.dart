@@ -36,7 +36,10 @@ class Network {
 
     /// 初始化 dio 配置
     var dio = Dio(BaseOptions(
-      baseUrl: 'https://qing.ntcai.com/api'
+      baseUrl: 'https://qing.ntcai.com/api',
+      headers: {
+        'Authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX25pY2tuYW1lIjoiXHVkODNjXHVkZjZlXHU1ZTAzXHU0ZTAxXHU3MjM4XHU2YmQ0XHVlMDA0IiwiYXZhdGFyIjoiaHR0cHM6XC9cL3d4LnFsb2dvLmNuXC9tbW9wZW5cL3ZpXzMyXC9RMGo0VHdHVGZUTHp2VzVMUUFoMUxWUkx1UEZNakx4VEZZZHJQMVlJZkpvZVJQemZDQnJBaWN4R1dSdUNDcmRQZ3VyaWM4c1lGM0hINWlicEJxZDlOR2hpY0FcLzEzMiIsIm1vYmlsZSI6IjE1MTYyODYyMjk3IiwiaWQiOjg1MjE3fQ.27uF_8c_jvbQY66hqK6qSLQAuJK8cxgyASEg3DgrpNE'
+      },
     ));
 
     /// 进行请求
