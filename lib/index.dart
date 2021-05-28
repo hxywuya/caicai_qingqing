@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qingqing_flutter/util/adapt.dart';
 import 'package:qingqing_flutter/util/network.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -46,13 +47,15 @@ class _IndexState extends State<Index> {
       // in the middle of the parent.
       child: Column(
         children: <Widget>[
-        topImage == '' ? Image(image: defaultTopImage, width: MediaQuery.of(context).size.width) : Image.network(topImage, width: MediaQuery.of(context).size.width),
+        topImage == '' ?
+          Image(image: defaultTopImage, width: Adapt.px(750), height: Adapt.px(860), fit: BoxFit.cover) :
+          Image.network(topImage, width: Adapt.px(750), height: Adapt.px(860), fit: BoxFit.cover),
           Container(
-            margin: EdgeInsets.fromLTRB(30, 35, 30, 0),
-            height: 60,
+            margin: EdgeInsets.all(Adapt.px(40)),
+            height: Adapt.px(110),
             decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [Color(0xFFFE3A9E), Color(0xFFFF3981), Color(0xFFFD3775)]),// 渐变色
-                borderRadius: BorderRadius.circular(30)
+                borderRadius: BorderRadius.circular(Adapt.px(60))
             ),
             child: ElevatedButton(
               style: ButtonStyle(
@@ -63,7 +66,7 @@ class _IndexState extends State<Index> {
               child: Container(
                 alignment: Alignment.center,
                 // height: 50,
-                child: Text('立即购票', style: TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),),
+                child: Text('立即购票', style: TextStyle(color: Colors.white, fontSize: Adapt.px(46), fontWeight: FontWeight.bold),),
               ),
             ),
           ),

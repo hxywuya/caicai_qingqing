@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:qingqing_flutter/index.dart';
 import 'package:qingqing_flutter/my.dart';
+import 'package:qingqing_flutter/util/adapt.dart';
 
 void main() {
   if (Platform.isAndroid) {
@@ -67,8 +68,8 @@ class _MyHomePageState extends State<MyHomePage> {
         items: bottomNavigationBarItems,
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
-        selectedFontSize: 12,
-        unselectedFontSize: 12,
+        selectedFontSize: Adapt.px(22),
+        unselectedFontSize: Adapt.px(22),
         onTap: (index) {
           setState(() {
             _currentIndex = index;
